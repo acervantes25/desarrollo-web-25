@@ -1,0 +1,699 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Sin título</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(128, 125, 120, 1);
+	fill: rgba(128, 125, 120, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(204, 121, 47, 1);
+	fill: rgba(204, 121, 47, 1);
+}
+.highlight-yellow {
+	color: rgba(195, 148, 67, 1);
+	fill: rgba(195, 148, 67, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(63, 126, 190, 1);
+	fill: rgba(63, 126, 190, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(179, 84, 136, 1);
+	fill: rgba(179, 84, 136, 1);
+}
+.highlight-red {
+	color: rgba(201, 85, 73, 1);
+	fill: rgba(201, 85, 73, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 111, 200, 0.09);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(128, 125, 120, 1);
+	fill: rgba(128, 125, 120, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(204, 121, 47, 1);
+	fill: rgba(204, 121, 47, 1);
+}
+.block-color-yellow {
+	color: rgba(195, 148, 67, 1);
+	fill: rgba(195, 148, 67, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(63, 126, 190, 1);
+	fill: rgba(63, 126, 190, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(179, 84, 136, 1);
+	fill: rgba(179, 84, 136, 1);
+}
+.block-color-red {
+	color: rgba(201, 85, 73, 1);
+	fill: rgba(201, 85, 73, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(232, 242, 250, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 99, 174, 0.172); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2730495e-1e16-80a5-85df-c739437d8dbe" class="page sans"><header><h1 class="page-title"></h1><p class="page-description"></p></header><div class="page-body"><p id="2730495e-1e16-8061-ab7b-d02730287668" class="">La etiqueta <code><strong>&lt;meta&gt;</strong></code> es una de las más importantes en HTML, aunque trabaja detrás de escenas. Se utiliza dentro de la sección <code><strong>&lt;head&gt;</strong></code> del documento para proporcionar <strong>metadatos</strong>; es decir, información sobre la propia página web que no se muestra directamente al usuario, pero que es crucial para los navegadores, los motores de búsqueda (Google, Bing, etc.) y otras herramientas.</p><h3 id="2730495e-1e16-80f5-b418-de59112fccb2" class=""><strong>Características principales:</strong></h3><ul id="2730495e-1e16-8031-ba02-ce60ca29141b" class="bulleted-list"><li style="list-style-type:disc"><strong>Es una etiqueta vacía:</strong> No tiene etiqueta de cierre (<code>&lt;/meta&gt;</code>), se cierra con <code>/&gt;</code> en XHTML o simplemente <code>&gt;</code> en HTML5.</li></ul><ul id="2730495e-1e16-800e-9b48-d4269d95a63b" class="bulleted-list"><li style="list-style-type:disc"><strong>Siempre va en el </strong><code><strong>&lt;head&gt;</strong></code><strong>:</strong> Su lugar correcto es dentro de la sección <code>&lt;head&gt;</code> del documento HTML.</li></ul><ul id="2730495e-1e16-80e4-971c-dd36d575467f" class="bulleted-list"><li style="list-style-type:disc"><strong>Se define con atributos:</strong> La información que proporciona se especifica mediante atributos, siendo los más comunes <code><strong>name</strong></code> y <code><strong>content</strong></code>, o <code><strong>charset</strong></code>, o <code><strong>http-equiv</strong></code>.</li></ul><hr id="2730495e-1e16-8014-92a2-e474817da6ae"/><h3 id="2730495e-1e16-8063-a6b5-f9737db57655" class=""><strong>Los Usos Más Comunes y Prácticos de </strong><code><strong>&lt;meta&gt;</strong></code></h3><h3 id="2730495e-1e16-80f5-9685-d530fb8f56ee" class="">1. <strong>Definir el juego de caracteres (¡IMPORTANTE!):</strong></h3><p id="2730495e-1e16-80bf-beb7-e215ee9fa65c" class="">Es absolutamente esencial para que se muestren correctamente caracteres especiales como tildes (á, é, ñ), símbolos (¿, ¡, €), etc.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2730495e-1e16-80e8-825a-c873b6c5fdad" class="code code-wrap"><code class="language-HTML" style="white-space:pre-wrap;word-break:break-all">&lt;meta charset=&quot;UTF-8&quot;&gt;
+</code></pre><ul id="2730495e-1e16-8083-b707-fed63c1cb229" class="bulleted-list"><li style="list-style-type:disc"><code><strong>charset=&quot;UTF-8&quot;</strong></code> es el estándar actual y debe estar en todas tus páginas. Sin él, tu página podría verse con caracteres extraños (Ã±o en vez de Año).</li></ul><h3 id="2730495e-1e16-80f2-9842-fff8b6c29342" class="">2. <strong>Controlar la vista en dispositivos móviles (¡CRUCIAL!):</strong></h3><p id="2730495e-1e16-80a3-80ef-f55882f0667e" class="">Esta etiqueta le dice al navegador móvil cómo debe ajustar las dimensiones de la página.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2730495e-1e16-8080-949c-d73cc7d040d5" class="code code-wrap"><code class="language-HTML" style="white-space:pre-wrap;word-break:break-all">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+</code></pre><ul id="2730495e-1e16-801c-a5d9-f4f8434399f7" class="bulleted-list"><li style="list-style-type:disc"><code><strong>name=&quot;viewport&quot;</strong></code>: Indica que esta meta etiqueta controlará la ventana de visualización.</li></ul><ul id="2730495e-1e16-800e-8668-e01c0b755c6c" class="bulleted-list"><li style="list-style-type:disc"><code><strong>content=&quot;width=device-width&quot;</strong></code>: Le dice al navegador que el ancho de la página debe ser igual al ancho de la pantalla del dispositivo (evita ese zoom inicial que hace ver la página como en un escritorio).</li></ul><ul id="2730495e-1e16-804d-8588-df1647376b94" class="bulleted-list"><li style="list-style-type:disc"><code><strong>initial-scale=1.0</strong></code>: Establece el nivel de zoom inicial al 100%. Es fundamental para el <strong>diseño responsive</strong>.</li></ul><h3 id="2730495e-1e16-807a-a0d4-f70f2cdf7d19" class="">3. <strong>Para SEO (Optimización en Motores de Búsqueda):</strong></h3><p id="2730495e-1e16-808e-b015-e97b984c1c69" class="">Estas etiquetas ayudan a los buscadores a entender de qué trata tu página y cómo indexarla.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2730495e-1e16-80d0-ae54-d1696fc61c3d" class="code code-wrap"><code class="language-HTML" style="white-space:pre-wrap;word-break:break-all">&lt;meta name=&quot;description&quot; content=&quot;Una descripción clara y concisa de tu página, de unas 150 caracteres. Suele aparecer bajo el título en los resultados de Google.&quot;&gt;
+&lt;meta name=&quot;keywords&quot; content=&quot;palabra clave 1, palabra clave 2, palabra clave 3&quot;&gt; &lt;!-- Esta ya no es tan importante para Google --&gt;
+&lt;meta name=&quot;author&quot; content=&quot;Tu Nombre&quot;&gt;
+</code></pre><ul id="2730495e-1e16-8088-a54a-fc651cd4ed4f" class="bulleted-list"><li style="list-style-type:disc"><code><strong>description</strong></code>: Es muy importante. Es el &quot;texto promocional&quot; que ven los usuarios en los resultados de búsqueda. Debe ser atractivo y relevante.</li></ul><ul id="2730495e-1e16-80fb-9ce1-e81877544634" class="bulleted-list"><li style="list-style-type:disc"><code><strong>keywords</strong></code>: Hoy en día los motores de búsqueda le dan muy poco peso, pero se puede seguir usando.</li></ul><h3 id="2730495e-1e16-8069-b00f-c76dff285e8b" class="">4. <strong>Controlar el rastreo e indexación:</strong></h3><p id="2730495e-1e16-808f-b6bf-c94d7e21f9f3" class="">Puedes dar instrucciones específicas a los &quot;robots&quot; de los buscadores.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2730495e-1e16-802c-902b-e4de3c21d9ef" class="code code-wrap"><code class="language-HTML" style="white-space:pre-wrap;word-break:break-all">&lt;meta name=&quot;robots&quot; content=&quot;noindex, nofollow&quot;&gt;
+</code></pre><ul id="2730495e-1e16-8087-8003-e2ae9fe8da07" class="bulleted-list"><li style="list-style-type:disc"><code><strong>noindex</strong></code>: Le dice al motor de búsqueda que <strong>no</strong> incluya esta página en sus resultados.</li></ul><ul id="2730495e-1e16-803a-83ca-ec3423b6d4a1" class="bulleted-list"><li style="list-style-type:disc"><code><strong>nofollow</strong></code>: Le dice que <strong>no</strong> siga los enlaces que hay en esta página.</li></ul><ul id="2730495e-1e16-802e-b5f4-dab1d2a13079" class="bulleted-list"><li style="list-style-type:disc">(Los valores por defecto, si no pones esta etiqueta, son <code>index, follow</code>).</li></ul><hr id="2730495e-1e16-80a0-9d77-fb580f7af68f"/><h3 id="2730495e-1e16-80c8-9022-c00e64dbfe3b" class=""><strong>Sintaxis con diferentes atributos:</strong></h3><p id="2730495e-1e16-80ce-b518-f9eda6f29b5c" class="">La etiqueta <code>&lt;meta&gt;</code> tiene dos formas principales de trabajar:</p><ol type="1" id="2730495e-1e16-8056-8684-ce720870f80e" class="numbered-list" start="1"><li><strong>Usando </strong><code><strong>name</strong></code><strong> y </strong><code><strong>content</strong></code><strong> (para metadatos de información):</strong><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2730495e-1e16-80f8-8ca1-c5903c4427a8" class="code code-wrap"><code class="language-HTML" style="white-space:pre-wrap;word-break:break-all">&lt;meta name=&quot;el-nombre-del-metadato&quot; content=&quot;el-valor-del-metadato&quot;&gt;
+</code></pre><ul id="2730495e-1e16-8081-9b3d-d54bdff67ad9" class="bulleted-list"><li style="list-style-type:disc">Ejemplo: <code>&lt;meta name=&quot;description&quot; content=&quot;Aprende HTML gratis&quot;&gt;</code></li></ul></li></ol><ol type="1" id="2730495e-1e16-80a9-af4f-dd5a096018c1" class="numbered-list" start="2"><li><strong>Usando </strong><code><strong>http-equiv</strong></code><strong> (para simular cabeceras HTTP):</strong><br/>Es una forma de dar instrucciones al navegador, como si vinieran del servidor.<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2730495e-1e16-8000-8308-d33f3155876d" class="code code-wrap"><code class="language-HTML" style="white-space:pre-wrap;word-break:break-all">&lt;meta http-equiv=&quot;el-encabezado&quot; content=&quot;el-valor&quot;&gt;
+</code></pre><ul id="2730495e-1e16-8076-922f-c8c032d0e077" class="bulleted-list"><li style="list-style-type:disc">Ejemplo: <code>&lt;meta http-equiv=&quot;refresh&quot; content=&quot;5; url=https://www.ejemplo.com/&quot;&gt;</code> (Redirige la página a otra URL después de 5 segundos).</li></ul></li></ol><h3 id="2730495e-1e16-8060-8bea-fc36c0d1f3d2" class=""><strong>Resumen y Analogía:</strong></h3><p id="2730495e-1e16-80d1-8574-db2ea54c754e" class="">Piensa en la etiqueta <code><strong>&lt;meta&gt;</strong></code> como la <strong>etiqueta de un producto</strong> o la <strong>ficha técnica de un libro</strong>.</p><ul id="2730495e-1e16-8050-bad1-c7fc2bbc0afb" class="bulleted-list"><li style="list-style-type:disc">En un libro, el <code><strong>&lt;title&gt;</strong></code> sería el título en la portada.</li></ul><ul id="2730495e-1e16-80d9-8114-fc60b7e7ae40" class="bulleted-list"><li style="list-style-type:disc">Las etiquetas <code><strong>&lt;meta&gt;</strong></code> serían la información de la <strong>solapa o lomo</strong>: el nombre del autor (<code>author</code>), la sinopsis (<code>description</code>), el género (<code>keywords</code>), el ISBN (<code>charset</code>), etc.</li></ul><p id="2730495e-1e16-80b3-baeb-e57b9ab39746" class="">Esta información no es el contenido principal de la historia, pero es <strong>esencial</strong> para catalogar, encontrar y entender el contexto del libro en una biblioteca (que sería el internet).</p><p id="2730495e-1e16-800a-9a11-cd4894d6056b" class="">
+</p><p id="2730495e-1e16-80ca-bbc2-fc177085f1aa" class="">¡</p><h3 id="2730495e-1e16-80ee-9acd-d7e22b1a6b48" class="">Tabla de Etiquetas HTML para Formato de Texto</h3><table id="2730495e-1e16-800a-a25b-c41ccbaac83d" class="simple-table"><thead class="simple-table-header"><tr id="2730495e-1e16-80c1-9ddc-c9b5170caef0"><th id="ZZm~" class="simple-table-header-color simple-table-header">Etiqueta</th><th id="Yiuh" class="simple-table-header-color simple-table-header">Descripción</th><th id="&lt;ir?" class="simple-table-header-color simple-table-header">Ejemplo de código</th><th id="RLbS" class="simple-table-header-color simple-table-header">Resultado en el navegador</th></tr></thead><tbody><tr id="2730495e-1e16-80b6-9fbb-c12a89b4919b"><td id="ZZm~" class=""><code><strong>&lt;h1&gt;</strong></code><strong> a </strong><code><strong>&lt;h6&gt;</strong></code></td><td id="Yiuh" class="">Encabezados o títulos (h1 es el más importante, h6 el menos importante).</td><td id="&lt;ir?" class=""><code>&lt;h1&gt;Título principal&lt;/h1&gt;</code></td><td id="RLbS" class="">&lt;h1&gt;Título principal&lt;/h1&gt;</td></tr><tr id="2730495e-1e16-801f-80ad-d2c40798c0d2"><td id="ZZm~" class=""><code><strong>&lt;p&gt;</strong></code></td><td id="Yiuh" class="">Define un párrafo de texto.</td><td id="&lt;ir?" class=""><code>&lt;p&gt;Esto es un párrafo.&lt;/p&gt;</code></td><td id="RLbS" class="">&lt;p&gt;Esto es un párrafo.&lt;/p&gt;</td></tr><tr id="2730495e-1e16-80e3-9610-f79fc4a6d974"><td id="ZZm~" class=""><code><strong>&lt;br&gt;</strong></code></td><td id="Yiuh" class="">Salto de línea (sin cerrar, es una etiqueta vacía).</td><td id="&lt;ir?" class=""><code>Texto&lt;br&gt;con salto</code></td><td id="RLbS" class="">Texto&lt;br&gt;con salto</td></tr><tr id="2730495e-1e16-80bc-ad15-d62584b10ead"><td id="ZZm~" class=""><code><strong>&lt;hr&gt;</strong></code></td><td id="Yiuh" class="">Línea horizontal temática (separador).</td><td id="&lt;ir?" class=""><code>&lt;hr&gt;</code></td><td id="RLbS" class="">&lt;hr&gt;</td></tr><tr id="2730495e-1e16-809f-a28a-ece613963b83"><td id="ZZm~" class=""><code><strong>&lt;strong&gt;</strong></code></td><td id="Yiuh" class="">Texto importante (normalmente en <strong>negrita</strong>).</td><td id="&lt;ir?" class=""><code>&lt;strong&gt;Texto importante&lt;/strong&gt;</code></td><td id="RLbS" class=""><strong>Texto importante</strong></td></tr><tr id="2730495e-1e16-800b-ba24-c9c3d190cf8a"><td id="ZZm~" class=""><code><strong>&lt;em&gt;</strong></code></td><td id="Yiuh" class="">Texto con énfasis (normalmente en <em>cursiva</em>).</td><td id="&lt;ir?" class=""><code>&lt;em&gt;Texto enfatizado&lt;/em&gt;</code></td><td id="RLbS" class=""><em>Texto enfatizado</em></td></tr><tr id="2730495e-1e16-8075-a9d7-c2df449cc025"><td id="ZZm~" class=""><code><strong>&lt;mark&gt;</strong></code></td><td id="Yiuh" class="">Texto resaltado o marcado.</td><td id="&lt;ir?" class=""><code>&lt;mark&gt;Texto resaltado&lt;/mark&gt;</code></td><td id="RLbS" class="">&lt;mark&gt;Texto resaltado&lt;/mark&gt;</td></tr><tr id="2730495e-1e16-80e8-bdf3-e9ab1602dae9"><td id="ZZm~" class=""><code><strong>&lt;small&gt;</strong></code></td><td id="Yiuh" class="">Texto más pequeño (comentarios, notas legales).</td><td id="&lt;ir?" class=""><code>&lt;small&gt;Texto pequeño&lt;/small&gt;</code></td><td id="RLbS" class="">&lt;small&gt;Texto pequeño&lt;/small&gt;</td></tr><tr id="2730495e-1e16-8011-bc09-e4274592eb1a"><td id="ZZm~" class=""><code><strong>&lt;del&gt;</strong></code></td><td id="Yiuh" class="">Texto tachado (eliminado).</td><td id="&lt;ir?" class=""><code>&lt;del&gt;Texto eliminado&lt;/del&gt;</code></td><td id="RLbS" class="">&lt;del&gt;Texto eliminado&lt;/del&gt;</td></tr><tr id="2730495e-1e16-8015-b268-ce00ff1987be"><td id="ZZm~" class=""><code><strong>&lt;ins&gt;</strong></code></td><td id="Yiuh" class="">Texto subrayado (insertado).</td><td id="&lt;ir?" class=""><code>&lt;ins&gt;Texto insertado&lt;/ins&gt;</code></td><td id="RLbS" class="">&lt;ins&gt;Texto insertado&lt;/ins&gt;</td></tr><tr id="2730495e-1e16-800a-b6bb-e750a5b24af2"><td id="ZZm~" class=""><code><strong>&lt;sub&gt;</strong></code></td><td id="Yiuh" class="">Texto en subíndice (parte inferior).</td><td id="&lt;ir?" class=""><code>H&lt;sub&gt;2&lt;/sub&gt;O</code></td><td id="RLbS" class="">H&lt;sub&gt;2&lt;/sub&gt;O</td></tr><tr id="2730495e-1e16-809c-80f3-ef67e779affc"><td id="ZZm~" class=""><code><strong>&lt;sup&gt;</strong></code></td><td id="Yiuh" class="">Texto en superíndice (parte superior).</td><td id="&lt;ir?" class=""><code>E=mc&lt;sup&gt;2&lt;/sup&gt;</code></td><td id="RLbS" class="">E=mc&lt;sup&gt;2&lt;/sup&gt;</td></tr><tr id="2730495e-1e16-809e-9d14-c983ef5261eb"><td id="ZZm~" class=""><code><strong>&lt;code&gt;</strong></code></td><td id="Yiuh" class="">Fragmento de código de programación (fuente monoespaciada).</td><td id="&lt;ir?" class=""><code>&lt;code&gt;console.log()&lt;/code&gt;</code></td><td id="RLbS" class="">&lt;code&gt;console.log()&lt;/code&gt;</td></tr><tr id="2730495e-1e16-80d6-b3cb-c682f2cb5e44"><td id="ZZm~" class=""><code><strong>&lt;pre&gt;</strong></code></td><td id="Yiuh" class="">Texto preformateado (preserva espacios y saltos de línea).</td><td id="&lt;ir?" class=""><code>&lt;pre&gt;Hola   Mundo&lt;/pre&gt;</code></td><td id="RLbS" class="">&lt;pre&gt;Hola   Mundo&lt;/pre&gt;</td></tr><tr id="2730495e-1e16-80be-b04b-d6245c00c4ea"><td id="ZZm~" class=""><code><strong>&lt;blockquote&gt;</strong></code></td><td id="Yiuh" class="">Cita o bloque de texto citado (sangría automática).</td><td id="&lt;ir?" class=""><code>&lt;blockquote&gt;Cita famosa&lt;/blockquote&gt;</code></td><td id="RLbS" class="">&lt;blockquote&gt;Cita famosa&lt;/blockquote&gt;</td></tr><tr id="2730495e-1e16-8027-bb80-c2db60d611b5"><td id="ZZm~" class=""><code><strong>&lt;q&gt;</strong></code></td><td id="Yiuh" class="">Cita corta en línea (agrega comillas automáticamente).</td><td id="&lt;ir?" class=""><code>&lt;q&gt;Una cita corta&lt;/q&gt;</code></td><td id="RLbS" class="">&lt;q&gt;Una cita corta&lt;/q&gt;</td></tr><tr id="2730495e-1e16-80ff-b196-fc99e0f7d594"><td id="ZZm~" class=""><code><strong>&lt;abbr&gt;</strong></code></td><td id="Yiuh" class="">Abreviatura o acrónimo (muestra tooltip con el atributo <code>title</code>).</td><td id="&lt;ir?" class=""><code>&lt;abbr title=&quot;World Health Organization&quot;&gt;WHO&lt;/abbr&gt;</code></td><td id="RLbS" class="">&lt;abbr title=&quot;World Health Organization&quot;&gt;WHO&lt;/abbr&gt;</td></tr><tr id="2730495e-1e16-80bd-b4e4-e85e57fe3130"><td id="ZZm~" class=""><code><strong>&lt;address&gt;</strong></code></td><td id="Yiuh" class="">Información de contacto/autor (cursiva por defecto).</td><td id="&lt;ir?" class=""><code>&lt;address&gt;email@ejemplo.com&lt;/address&gt;</code></td><td id="RLbS" class="">&lt;address&gt;<a href="mailto:email@ejemplo.com">email@ejemplo.com</a>&lt;/address&gt;</td></tr><tr id="2730495e-1e16-8042-9552-c33b1f73d267"><td id="ZZm~" class=""><code><strong>&lt;b&gt;</strong></code></td><td id="Yiuh" class="">Texto en negrita (sin importancia semántica, solo estilo).</td><td id="&lt;ir?" class=""><code>&lt;b&gt;Texto en negrita&lt;/b&gt;</code></td><td id="RLbS" class="">&lt;b&gt;Texto en negrita&lt;/b&gt;</td></tr><tr id="2730495e-1e16-8061-ad53-cea002008957"><td id="ZZm~" class=""><code><strong>&lt;i&gt;</strong></code></td><td id="Yiuh" class="">Texto en cursiva (sin énfasis semántico, solo estilo).</td><td id="&lt;ir?" class=""><code>&lt;i&gt;Texto en cursiva&lt;/i&gt;</code></td><td id="RLbS" class="">&lt;i&gt;Texto en cursiva&lt;/i&gt;</td></tr><tr id="2730495e-1e16-801e-9e63-d1513c0a8f5a"><td id="ZZm~" class=""><code><strong>&lt;span&gt;</strong></code></td><td id="Yiuh" class="">Contenedor en línea para aplicar estilos o scripts a parte de un texto.</td><td id="&lt;ir?" class=""><code>&lt;span style=&quot;color:red;&quot;&gt;Rojo&lt;/span&gt;</code></td><td id="RLbS" class="">&lt;span style=&quot;color:red;&quot;&gt;Rojo&lt;/span&gt;</td></tr></tbody></table><hr id="2730495e-1e16-805e-a353-c5118e33ed6a"/><h3 id="2730495e-1e16-80ea-9f06-f0fc5ad777e0" class=""><strong>Notas importantes:</strong></h3><ul id="2730495e-1e16-80fa-ad9e-f67762fb4f55" class="bulleted-list"><li style="list-style-type:disc"><strong>Semántica vs. Estilo:</strong> Etiquetas como <code>&lt;strong&gt;</code> e <code>&lt;em&gt;</code> dan significado semántico (importancia/énfasis), mientras que <code>&lt;b&gt;</code> e <code>&lt;i&gt;</code> son solo visuales. <strong>Es mejor usar las semánticas</strong> para accesibilidad y SEO.</li></ul><ul id="2730495e-1e16-8081-b58f-ddd32055eb0e" class="bulleted-list"><li style="list-style-type:disc"><strong>Accesibilidad:</strong> Screen readers (lectores de pantalla) interpretan etiquetas como <code>&lt;strong&gt;</code> o <code>&lt;em&gt;</code> con un tono de voz diferente, ayudando a usuarios con discapacidad visual.</li></ul><ul id="2730495e-1e16-808e-82db-d13f274ebbec" class="bulleted-list"><li style="list-style-type:disc"><strong>CSS:</strong> El estilo visual final (color, tamaño de fuente, etc.) se controla con CSS, pero estas etiquetas dan la base estructural y semántica.</li></ul><p id="2730495e-1e16-80b5-aa3a-f53c8e1ab7ec" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
