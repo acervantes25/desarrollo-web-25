@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portfolio - Proyectos del Semestre</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container {
+            text-align: center;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+        
+        canvas {
+            border: 2px solid #333;
+            border-radius: 10px;
+            cursor: pointer;
+            background: #f8f9fa;
+        }
+        
+        .info {
+            margin-top: 20px;
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎓 Mis Proyectos del Semestre</h1>
+        <canvas id="portfolioCanvas" width="800" height="400"></canvas>
+        <div class="info">
+            Haz clic en los botones para ver cada proyecto
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('portfolioCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Configuración de botones
+        const botones = [
+            { x: 100, y: 100, ancho: 200, alto: 60, texto: "🧮 Calculadora", url: "proyectos/calculadora.html", color: "#3498db" },
+            { x: 350, y: 100, ancho: 200, alto: 60, texto: "🖼️ Galería", url: "proyectos/galeria.html", color: "#e74c3c" },
+            { x: 100, y: 200, ancho: 200, alto: 60, texto: "🎮 Juego Memoria", url: "proyectos/juego-memoria.html", color: "#2ecc71" },
+            { x: 350, y: 200, ancho: 200, alto: 60, texto: "📝 Blog Personal", url: "proyectos/blog.html", color: "#f39c12" },
+            { x: 225, y: 300, ancho: 200, alto: 60, texto: "📊 Dashboard", url: "proyectos/dashboard.html", color: "#9b59b6" }
+        ];
+
+        // Dibujar botones
+        function dibujarBotones() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Título en el canvas
+            ctx.fillStyle = '#333';
+            ctx.font = 'bold 24px Arial';
+            ctx.fillText('Selecciona un Proyecto', 280, 50);
+            
+            // Dibujar cada botón
+            botones.forEach(boton => {
+                // Fondo del botón
+                ctx.fillStyle = boton.color;
+                ctx.fillRect(boton.x, boton.y, boton.ancho, boton.alto);
+                
+                // Borde del botón
+                ctx.strokeStyle = '#2c3e50';
+                ctx.lineWidth = 2;
+                ctx.strokeRect(boton.x, boton.y, boton.ancho, boton.alto);
+                
+                // Texto del botón
+                ctx.fillStyle = 'white';
+                ctx.font = 'bold 16px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText(boton.texto, boton.x + boton.ancho/2, boton.y + boton.alto/2 + 6);
+            });
+        }
+
+        // Detectar clics en los botones
+        canvas.addEventListener('click', function(event) {
+            const rect = canvas.getBoundingClientRect();
+            const mouseX = event.clientX - rect.left;
+            const mouseY = event.clientY - rect.top;
+            
+            botones.forEach(boton => {
+                if (mouseX >= boton.x && mouseX <= boton.x + boton.ancho && 
+                    mouseY >= boton.y && mouseY <= boton.y + boton.alto) {
+                    
+                    // Efecto visual al hacer clic
+                    ctx.fillStyle = '#34495e';
+                    ctx.fillRect(boton.x, boton.y, boton.ancho, boton.alto);
+                    ctx.fillStyle = 'white';
+                    ctx.fillText(boton.texto, boton.x + boton.ancho/2, boton.y + boton.alto/2 + 6);
+                    
+                    setTimeout(() => {
+                        // Redirigir a la página del proyecto
+                        window.location.href = boton.url;
+                    }, 200);
+                }
+            });
+        });
+
+        // Efecto hover
+        canvas.addEventListener('mousemove', function(event) {
+            const rect = canvas.getBoundingClientRect();
+            const mouseX = event.clientX - rect.left;
+            const mouseY = event.clientY - rect.top;
+            
+            let hover = false;
+            botones.forEach(boton => {
+                if (mouseX >= boton.x && mouseX <= boton.x + boton.ancho && 
+                    mouseY >= boton.y && mouseY <= boton.y + boton.alto) {
+                    canvas.style.cursor = 'pointer';
+                    hover = true;
+                }
+            });
+            
+            if (!hover) {
+                canvas.style.cursor = 'default';
+            }
+        });
+
+        // Inicializar
+        dibujarBotones();
+    </script>
+</body>
+</html>
